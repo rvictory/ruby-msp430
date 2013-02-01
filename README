@@ -1,1 +1,17 @@
-This file was created by JetBrains RubyMine 4.5.4 for binding GitHub repository
+Hopefully going to be a Ruby DSL for basic MSP-430 programming.
+
+It will look something like this (ideally):
+
+configure_io do
+    @led     = port1.pin1.out
+    @switch  = port1.pin2.in
+end
+
+program_loop do
+    @led.toggle
+    wait_seconds(1)
+end
+
+I also hope to have syntax for defining interrupt handlers and more complex logic (setting up shift registers, SPI, PWM, etc.)
+
+Running the ruby program will produce C or ASM code to drive the application, ASM will be if I'm feeling very ambitious
